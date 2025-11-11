@@ -89,6 +89,10 @@ export default function GitHubIntegration() {
 
   return (
     <div className="space-y-3">
+      <div>
+        <h2 className="text-xl font-semibold text-text-primary mb-1">{t('integrations.title')}</h2>
+        <p className="text-sm text-text-muted mb-1">{t('integrations.description')}</p>
+      </div>
       <div className="bg-surface border border-border rounded-md p-2 space-y-1 max-h-[70vh] overflow-y-auto custom-scrollbar w-full">
         {isLoading ? (
           <LoadingState fullScreen={false} message={t('integrations.loading')} />

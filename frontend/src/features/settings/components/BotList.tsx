@@ -106,6 +106,10 @@ export default function BotList() {
   return (
     <>
       <div className="space-y-3">
+        <div>
+          <h2 className="text-xl font-semibold text-text-primary mb-1">{t('bots.title')}</h2>
+          <p className="text-sm text-text-muted mb-1">{t('bots.description')}</p>
+        </div>
         <div
           className={`bg-surface border border-border rounded-md p-2 w-full ${
             isEditing
