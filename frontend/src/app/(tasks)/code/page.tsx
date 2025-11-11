@@ -18,6 +18,7 @@ import OidcTokenHandler from '@/features/login/components/OidcTokenHandler'
 import '@/app/tasks/tasks.css'
 import '@/features/common/scrollbar.css'
 import { GithubStarButton } from '@/features/layout/GithubStarButton'
+import { VSCodeButton } from '@/features/layout/VSCodeButton'
 import { Team } from '@/types/api'
 
 export default function CodePage() {
@@ -71,6 +72,7 @@ export default function CodePage() {
               onMobileSidebarToggle={() => setIsMobileSidebarOpen(true)}
             >
               <GithubStarButton />
+              <VSCodeButton />
               <UserMenu />
             </TopNavigation>
             {/* Chat area with full functionality including repository selector */}
