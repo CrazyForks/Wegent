@@ -39,12 +39,27 @@ This migration adds encryption for GitLab and GitHub tokens stored in the databa
 
 ### Prerequisites
 
-1. Ensure `pymysql` is installed for synchronous database access:
+1. **Configure encryption keys** in your `.env` file:
+   ```bash
+   # For production, generate secure random keys:
+   SHARE_TOKEN_AES_KEY=$(openssl rand -hex 16)  # 32 characters for AES-256
+   SHARE_TOKEN_AES_IV=$(openssl rand -hex 8)    # 16 characters for AES IV
+   ```
+
+   Add these to your `.env` file:
+   ```bash
+   SHARE_TOKEN_AES_KEY=<your-32-character-key>
+   SHARE_TOKEN_AES_IV=<your-16-character-iv>
+   ```
+
+   **WARNING**: Never use the default keys from `.env.example` in production!
+
+2. Ensure `pymysql` is installed for synchronous database access:
    ```bash
    pip install pymysql
    ```
 
-2. Ensure `cryptography` package is installed:
+3. Ensure `cryptography` package is installed:
    ```bash
    pip install cryptography
    ```
