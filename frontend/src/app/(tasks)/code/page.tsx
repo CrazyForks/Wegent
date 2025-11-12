@@ -24,6 +24,7 @@ import { GithubStarButton } from '@/features/layout/GithubStarButton';
 import { Team } from '@/types/api';
 import { useTaskContext } from '@/features/tasks/contexts/taskContext';
 import { saveLastTab } from '@/utils/userPreferences';
+import OpenMenu from '@/features/layout/OpenMenu';
 
 export default function CodePage() {
   // Get search params to check for taskId
@@ -98,6 +99,13 @@ export default function CodePage() {
           >
             <GithubStarButton />
             <UserMenu />
+            {hasTaskId && selectedTaskDetail && (
+              <OpenMenu
+                gitUrl={selectedTaskDetail.git_url}
+                gitRepo={selectedTaskDetail.git_repo}
+                branchName={selectedTaskDetail.branch_name}
+              />
+            )}
             {hasTaskId && (
               <WorkbenchToggle
                 isOpen={isWorkbenchOpen}
